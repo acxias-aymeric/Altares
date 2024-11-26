@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier Request Form</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Logo Acxias-->
+    <img src="static/data/acxias.png" alt="Logo" class="logo">
+
+    <!-- Langue sélectionnée (affecte dynamiquement le texte) -->
+    <div class="language-selector">
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="en" selected>EN</option>
+            <option value="fr">FR</option>
+        </select>
+    </div>
+
+    <div class="form-container">
+        <h2>Supplier Request Form</h2>
+        
+        <!-- Section 1: General Supplier Information -->
+        <section>
+            <h3>1. General Supplier Information</h3>
+            <div class="form-group">
+                <label>1.10 Supplier Legal Name *</label>
+                <input type="text" value="Example Supplier Name" readonly>
+            </div>
+            <div class="form-group">
+                <label>1.16 Supplier Main Address</label>
+                <div class="address-grid">
+                    <input type="text" placeholder="Street" value="123 Example Street" readonly>
+                    <input type="text" placeholder="House Number" value="10" readonly>
+                    <input type="text" placeholder="Street 2" value="" readonly>
+                    <input type="text" placeholder="City" value="Example City" readonly>
+                    <input type="text" placeholder="Postal Code" value="12345" readonly>
+                    <input type="text" placeholder="Country/Region" value="Example Country" readonly>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Primary Supplier Contact -->
+        <section>
+            <h3>2. Primary Supplier Contact</h3>
+            <div class="form-group">
+                <label>2.1 Contact First Name</label>
+                <input type="text" value="John" readonly>
+            </div>
+            <div class="form-group">
+                <label>2.2 Contact Last Name</label>
+                <input type="text" value="Doe" readonly>
+            </div>
+            <div class="form-group">
+                <label>2.3 Contact Email *</label>
+                <input type="email" value="john.doe@example.com" readonly>
+            </div>
+            <div class="form-group">
+                <label>2.4 Contact Phone</label>
+                <input type="tel" value="123456789" readonly>
+            </div>
+        </section>
+
+        <!-- Section 3: Supplier Unique Identifier -->
+        <section>
+            <h3>3. Supplier Unique Identifier</h3>
+            <div class="form-group">
+                <label>3.1 Does this supplier/landlord have any TAX number?</label>
+                <div class="radio-group">
+                    <input type="radio" name="taxNumber" value="yes" checked disabled> Yes
+                    <input type="radio" name="taxNumber" value="no" disabled> No
+                </div>
+            </div>
+            <div class="form-group">
+                <label>3.2 Please provide bank information</label>
+                <div class="address-grid">
+                    <input type="text" placeholder="Bank Name" value="Example Bank" readonly>
+                    <input type="text" placeholder="Account Holder Name" value="John Doe" readonly>
+                    <input type="text" placeholder="SWIFT" value="EXAMP123" readonly>
+                    <input type="text" placeholder="Country/Region" value="Example Country" readonly>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Button -->
+        <div class="actions">
+            <button id="cancel-btn">Cancel</button>
+            <button id="submit-btn" class="primary">Submit</button>
+        </div>
+    </div>
+    <script>
+        // Redirect to another page when Submit is clicked
+    document.getElementById("submit-btn").addEventListener("click", () => {
+        alert("Form submitted!");
+        // Add your form submission logic here
+    });
+    </script>
+    <script>
+    document.getElementById("cancel-btn").addEventListener("click", () => {
+        window.location.href = "/"; // Redirige vers la page de garde
+    });
+    </script>
+</body>
+</html>

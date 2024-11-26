@@ -1,0 +1,10 @@
+---
+applications:
+- name: altares_app
+  routes: 
+    - route: altares_app.cfapps.us10-001.hana.ondemand.com
+  path: ../Procfile
+  memory: 128M
+  buildpacks:
+  - nodejs_buildpack
+  - python_buildpack
